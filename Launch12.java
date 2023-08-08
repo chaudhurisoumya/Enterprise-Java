@@ -1,40 +1,26 @@
 
-abstract class Calculator
+@FunctionalInterface
+interface Demo
 {
-	abstract int add();
-	abstract int add(int a, int b);
+	void disp();
 }
 
-class Cal extends Calculator
+class Alpha implements Demo
 {
-	public int add()
+	public void disp()
 	{
-		int a=10;
-		int b=20;
-		int c=a+b;
-		System.out.println(c);
-		return c;
-		
-	}
-	
-	public int add(int a, int b)
-	{
-		int c=a+b;
-		return c;
+		System.out.println("I have given body");
 	}
 }
-
-
 
 
 public class Launch12 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-        Cal c=new Cal();
-        //System.out.println(c.add());
-        int res=c.add();
-        System.out.println(c.add(10, 40));
+		
+          Demo d=new Alpha();
+          d.disp();
+
 	}
 
 }
