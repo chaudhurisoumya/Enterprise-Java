@@ -1,17 +1,33 @@
 
-public class Launch1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		String s1="Alien";
-		String s2="Alien";
-		
-		String s3=new String("Alien");
-		
-		System.out.println(s1==s2);
-		System.out.println(s1==s3);
-		
+
+
+public class Launch1 
+{
+	//static variables
+	static int a, b, c;
+	 
+	//static block
+	static 
+	{
+		System.out.println("Static block");
+		a=10;
+		b=20;
+		c=30;
+	}
+	
+	static void disp()
+	{
+		System.out.println("Static method");
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("Main method");
+		disp();
 
 	}
 
