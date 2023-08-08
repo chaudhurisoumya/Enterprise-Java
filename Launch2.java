@@ -1,34 +1,37 @@
 
+interface Calc1
+{
+	void add(int a, int b);
+}
+interface Calc2
+{
+	int sub(int a, int b);
+}
+
+
+class MyCalc implements Calc1, Calc2
+{
+	public void add(int a, int b)
+	{
+		int c=a+b;
+		System.out.println(c);
+	}
+	public int sub(int a, int b)
+	{
+		int c=a-b;
+		return c;
+	}
+}
+
+
 public class Launch2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			
-		int n=14;
-		for(int i=0;i<n;i++)
-		{
-				
-			for(int j=0;j<n;j++)
-			{
-				
-				if(i==0 || j==0 || i==n-1 || j==n-1 || i+j<=(n-1)/2  || 
-						j-i>=(n-1)/2   || i-j>=(n-1)/2 || i+j>=n-1 + n/2)
-					
-	              System.out.print("*");
-				else
-					
-					System.out.print(" ");
-	              
-			}
-			
-			
-			
-			
-			
-			
-			
-			System.out.println();
-		}
+		MyCalc c=new MyCalc();
+		c.add(10,20);
+		System.out.println(c.sub(30, 20));
+
 	}
 
 }

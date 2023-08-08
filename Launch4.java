@@ -1,36 +1,37 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
-class Demo
+interface Demo1
 {
-	public static void disp1()
+	void disp();
+	default void show()
 	{
-		System.out.println("Static method");
+		System.out.println("Hello i m in interface");
 	}
-	public void disp2()
+}
+
+class Alien implements Demo1
+{
+	public void disp()
 	{
-		System.out.println("non static method");
+		System.out.println("implementing display");
 	}
-	
+	public void show()
+	{
+		System.out.println("I have be overirded inchild");
+		
+	}
 }
 
 
 public class Launch4 {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        
 		
-		Demo.disp1();
+		Demo1 d=new Alien();
+		d.disp();
+		d.show();
 		
-		
-		//Thread.sleep(1000);
-		//Arrays.sort(null);
-		
-		
-		
-		Demo d=new Demo();
-		d.disp1();
-		d.disp2();
-
 	}
 
 }
