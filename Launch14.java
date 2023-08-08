@@ -1,80 +1,16 @@
-import java.util.Scanner;
 
-abstract class Shapes
+class InvalidCustomerException extends Exception
 {
-	float area;
-	abstract void input();
-	abstract void compute();
-	void disp()
+	InvalidCustomerException(String msg)
 	{
-		
-		System.out.println("The area is "+ area);
-	}	
-}
-class Rectangle1 extends Shapes
-{
-	float len;
-	float brd;
-	void input()
-	{
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Please enter length of rectangle");
-		len=scan.nextFloat();
-		System.out.println("Please enter breadth of rectangle");
-		brd=scan.nextFloat();
-	}
-	
-	void compute()
-	{
-		area=len*brd;
-	}
-	
-}
-class Square1 extends Shapes
-{
-	float len;
-	
-	void input()
-	{
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Please enter length of square");
-		len=scan.nextFloat();
-		
-	}
-	
-	void compute()
-	{
-		area=len*len;
-	}
-	
-}
-class Circles1 extends Shapes
-{
-	float rad;
-   final float pi=3.14f;
-
-	
-	void input()
-	{
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Please enter length of circle");
-		rad=scan.nextFloat();
-		
-	}
-	
-	void compute()
-	{
-		area=pi*rad*rad;
+		super(msg);
 	}
 }
-
-class Geometry
+class ATM
 {
-	void permit(Shapes s)
+	void verify()throws InvalidCustomerException
 	{
-		s.input();
-		s.compute();
-		s.disp();
+		throw new InvalidCustomerException("Not valid");
 	}
 }
 
@@ -84,16 +20,19 @@ public class Launch14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+  
+		try
+		{
 		
-		Rectangle1 r=new Rectangle1();
-		Square1 s=new Square1();
-		Circles1 c=new Circles1();
+		ATM a=new ATM();
+		a.verify();
+		}
+		catch(InvalidCustomerException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		System.out.println("Hello last");
 		
-		Geometry g=new Geometry();
-		g.permit(r);
-		g.permit(s);
-		g.permit(c);
-
 	}
 
 }
