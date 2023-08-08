@@ -1,36 +1,39 @@
-
-interface Calc1
-{
-	void add(int a, int b);
-}
-interface Calc2
-{
-	int sub(int a, int b);
-}
-
-
-class MyCalc implements Calc1, Calc2
-{
-	public void add(int a, int b)
-	{
-		int c=a+b;
-		System.out.println(c);
-	}
-	public int sub(int a, int b)
-	{
-		int c=a-b;
-		return c;
-	}
-}
-
-
+import java.util.*;
 public class Launch2 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		MyCalc c=new MyCalc();
-		c.add(10,20);
-		System.out.println(c.sub(30, 20));
+	public static void main(String[] args) 
+	{
+		LinkedList ll1=new LinkedList();
+		
+		ll1.add(28);
+		ll1.add("Hyder");
+		ll1.add('M');
+		ll1.add("Bengaluru");
+		
+	    System.out.println(ll1);
+	    
+	    ll1.add(3, 70);
+	    
+	    System.out.println(ll1);
+	    
+	    ll1.addFirst("iNeuron");
+	    ll1.addLast(100);
+	    
+	    System.out.println(ll1);
+	    
+	    LinkedList ll2=new LinkedList();
+	    ll2.add("India");
+	    ll2.offer("Bengaluru");
+	    ll2.add("India");
+	    
+	    System.out.println(ll2);
+	  
+	    
+	    
+	    
+	    
+		
+		
 
 	}
 

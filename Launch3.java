@@ -1,33 +1,22 @@
-
-interface Calcu
-{
-	void add();
-}
-
-class MyCal2 
-{
-	void sub()
-	{
-		int a=20;
-		int b=30;
-		int c=a-b;
-		System.out.println(c);	
-	}
-}
-
-class MyC extends MyCal2 implements Calcu
-{
-	public void add()
-	{
-		
-	}
-}
-
-
+import java.util.*;
 public class Launch3 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) 
+	{
+		ArrayDeque ad=new ArrayDeque();
+		
+		ad.add(10);
+		ad.add(20);
+		ad.add("iNeuron");
+		ad.add("Bengaluru");
+		
+		System.out.println(ad);
+		ad.addFirst(100);
+		ad.addLast(200);
+		ad.add(10);
+		
+		System.out.println(ad);
+		
 
 	}
 
