@@ -18,25 +18,25 @@ public class InsertApp {
 			session = HibernateUtil.getSession();
 
 			if (session != null)
-				transaction = session.beginTransaction();
+				transaction = session.beginTransaction();//con.setAutocommit(false)
 
 			if (transaction != null) {
 				Employee employee = new Employee();
-				employee.setEmpName("dhoni");
-				employee.setEmpSal(4566.7);
+				employee.setEmpId(18);
+				employee.setEmpName("kohli");
+				employee.setEmpSal(45444.5);
 
-				Integer id = (Integer) session.save(employee);
-				System.out.println("The id of the student is :: " + id);
+				session.persist(employee);//perform save operation
 				flag = true;
 			}
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		} finally {
-			if (flag == true)
-				transaction.commit();
+			if(flag == true)
+				transaction.commit();//con.commit()
 			else
-				transaction.rollback();
-
+				transaction.rollback();//con.rollback(0
+			
 			HibernateUtil.closeSession(session);
 		}
 
